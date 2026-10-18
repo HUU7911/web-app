@@ -153,7 +153,7 @@ function CategorySidebar() {
 				display: { xs: 'none', md: 'flex' },
 				flexDirection: 'column',
 				justifyContent: 'flex-start',
-				borderRadius: 4,
+				borderRadius: 2,
 				py: 1,
 				px: 0.5,
 				overflowY: 'auto',
@@ -247,7 +247,7 @@ function PromoSlider() {
 			aria-label="Banner"
 			onMouseEnter={() => setPaused(true)}
 			onMouseLeave={() => setPaused(false)}
-			sx={{ position: 'relative', overflow: 'hidden', borderRadius: 4, height: slideHeight }}
+			sx={{ position: 'relative', overflow: 'hidden', borderRadius: 2, height: slideHeight }}
 		>
 			<Box
 				sx={{
@@ -354,21 +354,33 @@ export default function AppLayout() {
 			>
 				<Container maxWidth="lg" disableGutters sx={{ px: { xs: 1.5, sm: 3 } }}>
 					<Toolbar disableGutters sx={{ gap: 1.5, minHeight: { xs: 56, md: 68 } }}>
-						<Typography
-							variant="h5"
+
+						<Box
 							component={RouterLink}
 							to="/"
+							aria-label="Shop Meal - Trang chủ"
 							sx={{
-								color: 'primary.main',
-								textDecoration: 'none',
-								fontWeight: 800,
-								letterSpacing: -0.5,
-								whiteSpace: 'nowrap',
+								display: 'flex',
+								alignItems: 'center',
+								flexShrink: 0,
 								mr: { md: 2 },
+								textDecoration: 'none',
 							}}
 						>
-							Shop Meal
-						</Typography>
+							<Box
+								component="img"
+								src="/shop-meal-logo.png"
+								alt="Shop Meal"
+								sx={{
+									display: 'block',
+									width: { xs: 112, sm: 135, md: 155 },
+									height: { xs: 42, md: 50 },
+									objectFit: 'contain',
+									objectPosition: 'left center',
+								}}
+							/>
+						</Box>
+
 
 						<Box sx={{ display: { xs: 'none', md: 'flex' }, flexGrow: 1, justifyContent: 'center' }}>
 							<Box sx={{ width: '100%', maxWidth: 560 }}>

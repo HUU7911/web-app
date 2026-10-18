@@ -29,7 +29,7 @@ export default function ProductCard({ product, onOpen, onAdd }: Props) {
 				display: 'flex',
 				flexDirection: 'column',
 				height: '100%',
-				borderRadius: 4,
+				borderRadius: 2,
 				overflow: 'hidden',
 				transition: 'transform .25s, box-shadow .25s, border-color .25s',
 				'&:hover': {
@@ -54,7 +54,7 @@ export default function ProductCard({ product, onOpen, onAdd }: Props) {
 						'& > *': { transition: 'transform .5s ease' },
 					}}
 				>
-					<AuthImage src={product.images?.[0]} alt={product.name} sx={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+					<AuthImage src={product.images?.[0]} alt={product.name} sx={{ width: '100%', height: '100%', objectFit: 'cover'}} />
 
 					{typeLabel && (
 						<Box

@@ -6,10 +6,11 @@ export const API_BASE_URL = import.meta.env.VITE_API_BASE_URL ?? 'http://localho
 const TOKEN_KEY = 'shopmeal.token';
 
 export const tokenStore = {
-  get: () => localStorage.getItem(TOKEN_KEY),
-  set: (token: string) => localStorage.setItem(TOKEN_KEY, token),
-  clear: () => localStorage.removeItem(TOKEN_KEY),
+  get: () => sessionStorage.getItem(TOKEN_KEY),
+  set: (token: string) => sessionStorage.setItem(TOKEN_KEY, token),
+  clear: () => sessionStorage.removeItem(TOKEN_KEY),
 };
+
 
 export const AUTH_LOGOUT_EVENT = 'shopmeal:auth-logout';
 export const AUTH_TOKEN_EVENT = 'shopmeal:auth-token';

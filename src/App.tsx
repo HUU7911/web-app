@@ -16,7 +16,6 @@ import OrderDetailPage from './pages/OrderDetailPage';
 import OrdersPage from './pages/OrdersPage';
 import PaymentResultPage from './pages/PaymentResultPage';
 import ProfilePage from './pages/ProfilePage';
-import Footer from './components/Footer'
 
 export default function App() {
   return (
@@ -50,9 +49,9 @@ export default function App() {
           <Route element={<RequireAdmin />}>
             <Route path="users" element={<AdminUsers />} />
           </Route>
+          <Route path="*" element={<Navigate to="/admin/orders" replace />} />
         </Route>
       </Route>
-      <Route path="footer" element={<Footer/>} />
     </Routes>
   );
 }

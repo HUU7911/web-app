@@ -76,7 +76,7 @@ export function LoginPage() {
     <AuthShell title="Đăng nhập" subtitle="Đăng nhập để đặt món và theo dõi đơn hàng.">
       <Stack component="form" spacing={2} onSubmit={submit}>
         {error && <Alert severity="error">{error}</Alert>}
-        <TextField label="Tên đăng nhập" value={username} onChange={(e) => setUsername(e.target.value)} required autoFocus />
+        <TextField label="Tên đăng nhập hoặc Email" value={username} onChange={(e) => setUsername(e.target.value)} required autoFocus />
         <TextField label="Mật khẩu" type="password" value={password} onChange={(e) => setPassword(e.target.value)} required />
         <Button type="submit" variant="contained" size="large" disabled={busy}>
           {busy ? 'Đang đăng nhập…' : 'Đăng nhập'}

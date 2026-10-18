@@ -110,7 +110,7 @@ export default function CheckoutPage() {
 		}
 	};
 
-	if (items.length === 0) {
+	if (items.length === 0 && !busy) {
 		return (
 			<EmptyState
 				title="Giỏ hàng đang trống"

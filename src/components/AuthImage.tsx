@@ -41,11 +41,12 @@ interface Props {
 
 export default function AuthImage({ src, alt, sx, fit = 'cover' }: Props) {
   const { token } = useAuth();
-  const [url, setUrl] = useState<string | undefined>(src);
+  const [url, setUrl] = useState<string | undefined>(token ? undefined : src);
   const [failed, setFailed] = useState(false);
 
   useEffect(() => {
     setFailed(false);
+    setUrl(undefined);
     if (!src) return;
     if (!token) {
       setUrl(src);
@@ -60,7 +61,7 @@ export default function AuthImage({ src, alt, sx, fit = 'cover' }: Props) {
     };
   }, [src, token]);
 
-  if (!src || failed) {
+  if (!src || failed || !url) {
     return (
       <Box
         role="img"
